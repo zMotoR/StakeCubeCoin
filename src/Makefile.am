@@ -1,7 +1,6 @@
 DIST_SUBDIRS = secp256k1
 AM_LDFLAGS = $(PTHREAD_CFLAGS) $(LIBTOOL_LDFLAGS)
 
-
 if EMBEDDED_LEVELDB
 LEVELDB_CPPFLAGS += -I$(srcdir)/leveldb/include
 LEVELDB_CPPFLAGS += -I$(srcdir)/leveldb/helpers/memenv
@@ -79,6 +78,7 @@ BITCOIN_CORE_H = \
   alert.h \
   allocators.h \
   amount.h \
+  banned.h \
   base58.h \
   bip38.h \
   bloom.h \
@@ -185,6 +185,7 @@ libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
   alert.cpp \
+  banned.cpp \
   bloom.cpp \
   chain.cpp \
   checkpoints.cpp \
